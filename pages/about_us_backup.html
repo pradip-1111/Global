@@ -1,53 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+display: none;
+background: white;
+border-top: 1px solid #E2E8F0;
+padding: 1rem;
+}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Aryan Global Commerce</title>
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/navbar.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+.mobile-menu:not(.hidden) {
+display: block;
+animation: slideDown 0.3s ease-out;
+}
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+@keyframes slideDown {
+from {
+opacity: 0;
+transform: translateY(-10px);
+}
 
-    @keyframes pulse {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
 
-      0%,
-      100% {
-        opacity: 1;
-      }
+@keyframes pulse {
 
-      50% {
-        opacity: 0.5;
-      }
-    }
+0%,
+100% {
+opacity: 1;
+}
 
-    .animate-pulse {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+50% {
+opacity: 0.5;
+}
+}
 
-    @keyframes bounce {
+.animate-pulse {
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
-      0%,
-      100% {
-        transform: translateY(0);
-      }
+@keyframes bounce {
 
-      50% {
-        transform: translateY(-10px);
-      }
-    }
+0%,
+100% {
+transform: translateY(0);
+}
 
-    .animate-bounce {
-      animation: bounce 1s infinite;
-    }
-  </style>
+50% {
+transform: translateY(-10px);
+}
+}
+
+.animate-bounce {
+animation: bounce 1s infinite;
+}
+</style>
 </head>
 
 <body class="bg-background text-text-primary antialiased">
@@ -198,8 +203,7 @@
   </nav>
 
   <!-- Hero Section with Gradient -->
-  <section
-    class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 py-24 overflow-hidden pt-32">
+  <section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 py-24 overflow-hidden">
     <!-- Animated Background Pattern -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
@@ -345,11 +349,18 @@
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">Quality First</h3>
-          <p class="text-text-secondary leading-relaxed">
-            Every product meets the highest international standards of safety and efficacy, ensuring excellence in
-            healthcare delivery.
+          <h3 class="text-2xl font-bold text-text-primary mb-3">Quality Assurance</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Strict adherence to WHO-GMP and ISO standards ensures every product meets the highest international
+            benchmarks for safety and efficacy.
           </p>
+          <div class="flex items-center text-primary-600 font-semibold text-sm">
+            Learn more
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
         </div>
 
         <!-- Value Card 2 -->
@@ -359,15 +370,22 @@
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
               </path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">Customer Focus</h3>
-          <p class="text-text-secondary leading-relaxed">
-            Building lasting partnerships through dedicated support, transparency, and a commitment to your success in
-            global markets.
+          <h3 class="text-2xl font-bold text-text-primary mb-3">Integrity</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Transparent and ethical business practices form the foundation of our relationships with partners, clients,
+            and communities worldwide.
           </p>
+          <div class="flex items-center text-secondary-600 font-semibold text-sm">
+            Learn more
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
         </div>
 
         <!-- Value Card 3 -->
@@ -376,14 +394,23 @@
           <div
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
               </path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">Innovation</h3>
-          <p class="text-text-secondary leading-relaxed">
-            Continuously evolving our processes and offerings to meet the changing needs of global healthcare systems.
+          <h3 class="text-2xl font-bold text-text-primary mb-3">Customer Focus</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Dedicated support and customized solutions to meet your specific needs, ensuring your success is our
+            priority at every step.
           </p>
+          <div class="flex items-center text-accent font-semibold text-sm">
+            Learn more
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -394,86 +421,84 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12">
         <!-- Mission -->
-        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div class="relative">
           <div
-            class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
-              </path>
-            </svg>
+            class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl transform rotate-3">
           </div>
-          <h3 class="text-3xl font-bold text-text-primary mb-4">Our Mission</h3>
-          <p class="text-lg text-text-secondary leading-relaxed">
-            To provide accessible, high-quality medical equipment and pharmaceuticals to healthcare providers worldwide,
-            ensuring that no community is left behind in the pursuit of better health outcomes.
-          </p>
+          <div class="relative bg-white rounded-2xl p-10 shadow-xl">
+            <div class="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-text-primary mb-4">Our Mission</h3>
+            <p class="text-text-secondary leading-relaxed text-lg">
+              To provide accessible, high-quality medical equipment and pharmaceuticals to healthcare providers
+              worldwide,
+              ensuring that no community is left behind in the pursuit of better health outcomes.
+            </p>
+          </div>
         </div>
 
         <!-- Vision -->
-        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div class="relative">
           <div
-            class="w-16 h-16 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-              </path>
-            </svg>
+            class="absolute inset-0 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl transform -rotate-3">
           </div>
-          <h3 class="text-3xl font-bold text-text-primary mb-4">Our Vision</h3>
-          <p class="text-lg text-text-secondary leading-relaxed">
-            To be the most trusted global partner in medical equipment export, recognized for our unwavering commitment
-            to
-            quality, innovation, and the advancement of healthcare accessibility worldwide.
-          </p>
+          <div class="relative bg-white rounded-2xl p-10 shadow-xl">
+            <div class="w-14 h-14 rounded-full bg-secondary-100 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-text-primary mb-4">Our Vision</h3>
+            <p class="text-text-secondary leading-relaxed text-lg">
+              To become the most trusted global partner in medical supply chain solutions, recognized for innovation,
+              reliability, and our unwavering commitment to improving healthcare access across all continents.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-primary-600 to-secondary-800">
+  <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-700">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Partner With Us?</h2>
-      <p class="text-xl text-white/90 mb-8">
-        Join healthcare providers worldwide who trust Aryan Global Commerce for their medical equipment needs.
+      <h2 class="text-4xl font-bold text-white mb-6">Ready to Partner With Us?</h2>
+      <p class="text-xl text-white/90 mb-8 leading-relaxed">
+        Join hundreds of healthcare providers worldwide who trust Aryan Global Commerce for their medical supply needs.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="contact_and_support.html"
-          class="px-8 py-4 bg-white text-primary-600 font-bold rounded-lg hover:bg-cyan-50 transition-colors shadow-xl">
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
           Contact Us Today
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
         </a>
         <a href="product_catalog.html"
-          class="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border-2 border-white/30">
-          View Products
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all">
+          View Our Products
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400">© 2025 Aryan Global Commerce. All Rights Reserved.</p>
-      <div class="flex justify-center space-x-6 mt-4 text-sm text-gray-500">
-        <span>WHO-GMP</span>
-        <span>CE Certified</span>
-        <span>ISO Certified</span>
-        <span>USFDA Approved</span>
-      </div>
+  <footer class="bg-surface-100 pt-16 pb-8 border-t border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-tertiary text-sm">
+      <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="../js/main.js" defer></script>
   <script>
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
-
     // Navbar scroll effect
     window.addEventListener('scroll', function () {
       const nav = document.getElementById('main-nav');
@@ -484,6 +509,7 @@
       }
     });
   </script>
+
 </body>
 
 </html>
