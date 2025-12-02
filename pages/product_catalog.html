@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog | Aryan Global Commerce - Medical Equipment</title>
+    <meta name="description"
+        content="Browse our extensive catalog of medical equipment, laboratory instruments, and pharmaceutical products. High-quality, certified solutions for global healthcare." />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn.active {
+            background-color: #0070C9;
+            color: white;
+            border-color: #0070C9;
+        }
+
+        /* Modal styles to ensure it displays as a centered popup */
+        #product-modal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            z-index: 9999 !important;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Medical Equipment",
+          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=medical-equipment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Laboratory Instruments",
+          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=laboratory-instruments"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pharmaceuticals",
+          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=pharmaceuticals"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-background text-text-primary antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-soft border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="./assets/logo.jpg" alt="Aryan Global Commerce" class="h-12 w-12 rounded-lg object-contain"
+                        onerror="this.style.display='none'" />
+                    <div>
+                        <h1 class="text-xl font-bold text-primary-700 tracking-tight">Aryan Global Commerce</h1>
+                        <p class="text-xs text-text-secondary font-medium tracking-wide">MEDICAL EXPORTS</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html"
+                        class="text-text-secondary hover:text-primary-600 transition-colors font-medium">Home</a>
+                    <a href="product_catalog.html" class="text-primary-600 font-semibold">Products</a>
+                    <a href="3d_models.html"
+                        class="text-text-secondary hover:text-primary-600 transition-colors font-medium">3D Models</a>
+                    <a href="about_us.html"
+                        class="text-text-secondary hover:text-primary-600 transition-colors font-medium">About
+                        Us</a>
+                    <a href="contact_and_support.html"
+                        class="bg-primary-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-500/30">Contact
+                        Us</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button class="text-text-secondary p-2" onclick="toggleMobileMenu()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="homepage.html" class="text-text-secondary font-medium">Home</a>
+                <a href="product_catalog.html" class="text-primary-600 font-semibold">Products</a>
+                <a href="3d_models.html" class="text-text-secondary font-medium">3D Models</a>
+                <a href="about_us.html" class="text-text-secondary font-medium">About Us</a>
+                <a href="contact_and_support.html" class="text-primary-600 font-medium">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-surface-50 border-b border-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Our Product Catalog</h1>
+            <p class="text-text-secondary max-w-2xl mx-auto text-lg">
+                Explore our comprehensive range of certified medical equipment and supplies, sourced to meet global
+                healthcare
+                standards.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Search & Filter Bar -->
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
+            <div class="relative flex-grow">
+                <input type="text" id="equipment-search" placeholder="Search products..."
+                    class="w-full pl-12 pr-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm" />
+                <svg class="w-5 h-5 text-text-tertiary absolute left-4 top-3.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+            <button onclick="toggleFilters()"
+                class="px-6 py-3 bg-white border border-border rounded-xl font-medium text-text-secondary hover:bg-surface-50 transition-colors flex items-center gap-2 shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                    </path>
+                </svg>
+                Filters
+            </button>
+        </div>
+
+        <!-- Advanced Filters Panel -->
+        <div id="filters-panel" class="hidden bg-white border border-border rounded-xl p-6 mb-8 shadow-soft">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold text-text-primary mb-2">Category</label>
+                    <select class="w-full rounded-lg border-border focus:ring-primary-500">
+                        <option>All Categories</option>
+                        <option>Medical Equipment</option>
+                        <option>Lab Instruments</option>
+                        <option>Pharmaceuticals</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-3">
+                <button onclick="resetFilters()"
+                    class="text-text-secondary hover:text-primary-600 font-medium px-4 py-2">Reset</button>
+                <button onclick="applyFilters()"
+                    class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700">Apply</button>
+            </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap gap-3 mb-12 justify-center">
+            <button
+                class="filter-btn active px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+                data-category="all" onclick="filterByCategory('all')">All</button>
+            <button
+                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+                data-category="medical-equipment" onclick="filterByCategory('medical-equipment')">Medical
+                Equipment</button>
+            <button
+                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+                data-category="laboratory-instruments" onclick="filterByCategory('laboratory-instruments')">Lab
+                Instruments</button>
+            <button
+                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+                data-category="pharmaceuticals" onclick="filterByCategory('pharmaceuticals')">Pharmaceuticals</button>
+        </div>
+
+        <!-- Product Grid Container -->
+        <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Products will be rendered here by js/products.js -->
+        </div>
+
+    </main>
+
+    <!-- Product Modal - Fixed Overlay Popup -->
+    <div id="product-modal" class="hidden">
+        <!-- Backdrop -->
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);"
+            onclick="closeProductModal()"></div>
+
+        <!-- Modal Content -->
+        <div
+            style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+            <div
+                style="position: relative; background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-width: 56rem; width: 100%; overflow: hidden;">
+
+                <!-- Close Button -->
+                <button onclick="closeProductModal()"
+                    style="position: absolute; top: 1rem; right: 1rem; z-index: 10; padding: 0.5rem; background: rgba(255,255,255,0.9); border-radius: 9999px; border: none; cursor: pointer;">
+                    <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <!-- Image Section -->
+                    <div style="height: 24rem; background: #f3f4f6; position: relative;">
+                        <img id="modal-image" src="" alt="Product"
+                            style="width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+
+                    <!-- Content Section -->
+                    <div
+                        style="padding: 2.5rem; display: flex; flex-direction: column; max-height: 600px; overflow-y: auto;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <span id="modal-category"
+                                style="font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; background: #eff6ff; color: #1d4ed8; border-radius: 9999px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem;">Category</span>
+                            <h3 id="modal-title"
+                                style="font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">
+                                Product Name</h3>
+                            <p id="modal-description" style="color: #6b7280; line-height: 1.625;">Product description
+                                goes here.</p>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="font-weight: 700; color: #111827; margin-bottom: 0.75rem;">Key Features</h4>
+                            <ul id="modal-features" style="list-style: none; padding: 0; margin: 0;">
+                                <!-- Features injected here -->
+                            </ul>
+                        </div>
+
+                        <div style="margin-top: auto; display: flex; gap: 1rem;">
+                            <a id="modal-contact-btn" href="contact_and_support.html"
+                                style="flex: 1; background: #2563eb; color: white; text-align: center; padding: 0.75rem; border-radius: 0.75rem; font-weight: 700; text-decoration: none; display: block;">
+                                Request Quote
+                            </a>
+                            <button onclick="closeProductModal()"
+                                style="padding: 0.75rem 1.5rem; border: 1px solid #d1d5db; border-radius: 0.75rem; font-weight: 600; color: #374151; background: white; cursor: pointer;">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-100 pt-16 pb-8 border-t border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-text-tertiary text-sm">
+                <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/products.js" defer></script>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+
+</html>
