@@ -47,7 +47,7 @@ const products = [
     },
     {
         id: 'ph-001',
-        name: 'Amoxicillin Capsules',
+        name: 'Antibiotic Capsules',
         category: 'pharmaceuticals',
         image: '../assets/products/amoxicillin.jpg',
         description: 'Broad-spectrum antibiotic for treating bacterial infections.',

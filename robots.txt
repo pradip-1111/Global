@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://aryanglobalcommerce.com/sitemap.xml
+
+Sitemap: https://rnglobalcommerce.com/sitemap.xml
