@@ -4,17 +4,76 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Details | Aryan Global Commerce</title>
-    <meta name="description" content="Detailed product information." />
-
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
+    <title>Modern Navbar Demo - Aryan Global Commerce</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo-content {
+            min-height: 200vh;
+            background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+            padding-top: 100px;
+        }
+
+        .demo-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 0.75rem;
+            border: 1px solid #0ea5e9;
+        }
+
+        .feature-item h3 {
+            color: #0070c9;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .feature-item p {
+            color: #64748b;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 
-<body class="bg-background text-text-primary antialiased">
+<body>
     <!-- Modern Premium Navigation -->
     <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +81,7 @@
                 <!-- Logo with Glow Effect -->
                 <div class="flex items-center group cursor-pointer nav-logo-glow">
                     <div class="relative">
-                        <img src="../assets/logo.jpg" alt="Aryan Global Commerce Logo"
+                        <img src="./assets/logo.jpg" alt="Aryan Global Commerce Logo"
                             class="h-14 w-14 rounded-xl object-contain shadow-2xl border-2 border-white/30 bg-white/90 p-1 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div class="ml-4">
@@ -46,7 +105,7 @@
                     </div>
 
                     <!-- Nav Links with Icons -->
-                    <a href="../index.html" class="nav-link flex items-center">
+                    <a href="index.html" class="nav-link active flex items-center">
                         <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -54,7 +113,7 @@
                         Home
                     </a>
 
-                    <a href="product_catalog.html" class="nav-link active flex items-center">
+                    <a href="pages/product_catalog.html" class="nav-link flex items-center">
                         <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -62,7 +121,7 @@
                         Products
                     </a>
 
-                    <a href="3d_models.html" class="nav-link flex items-center">
+                    <a href="pages/3d_models.html" class="nav-link flex items-center">
                         <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
@@ -70,7 +129,7 @@
                         3D Models
                     </a>
 
-                    <a href="about_us.html" class="nav-link flex items-center">
+                    <a href="pages/about_us.html" class="nav-link flex items-center">
                         <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -79,7 +138,7 @@
                     </a>
 
                     <!-- CTA Button -->
-                    <a href="contact_and_support.html" class="nav-cta ml-2 flex items-center">
+                    <a href="pages/contact_and_support.html" class="nav-cta ml-2 flex items-center">
                         <span class="flex items-center">
                             <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +178,7 @@
                     </div>
                 </div>
 
-                <a href="../index.html"
+                <a href="index.html"
                     class="flex items-center px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/20 transition-all">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -127,7 +186,7 @@
                     </svg>
                     Home
                 </a>
-                <a href="product_catalog.html"
+                <a href="pages/product_catalog.html"
                     class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -135,7 +194,7 @@
                     </svg>
                     Products
                 </a>
-                <a href="3d_models.html"
+                <a href="pages/3d_models.html"
                     class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -143,7 +202,7 @@
                     </svg>
                     3D Models
                 </a>
-                <a href="about_us.html"
+                <a href="pages/about_us.html"
                     class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -151,7 +210,7 @@
                     </svg>
                     About Us
                 </a>
-                <a href="contact_and_support.html"
+                <a href="pages/contact_and_support.html"
                     class="flex items-center px-4 py-3 mt-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-cyan-100 transition-all">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -163,27 +222,106 @@
         </div>
     </nav>
 
-    <!-- Product Details Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div id="product-details-container"
-            class="bg-white rounded-2xl shadow-soft border border-border overflow-hidden min-h-[400px]">
-            <!-- Content injected by JS -->
-            <div class="flex items-center justify-center h-96">
-                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <div class="demo-section">
+            <div class="demo-card">
+                <h1 style="color: #0070c9; font-size: 2.5rem; margin-bottom: 1rem;">🎨 Modern Navbar Demo</h1>
+                <p style="color: #64748b; font-size: 1.125rem; line-height: 1.75;">
+                    This is a demonstration of the new modern navbar design for Aryan Global Commerce.
+                    Scroll down to see the navbar behavior and explore all the premium features!
+                </p>
+            </div>
+
+            <div class="demo-card">
+                <h2 style="color: #0070c9; font-size: 1.875rem; margin-bottom: 1.5rem;">✨ Key Features</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>🌈 Animated Gradient</h3>
+                        <p>Beautiful blue-to-cyan gradient background that smoothly animates, creating a dynamic and
+                            premium feel.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>🔍 Integrated Search</h3>
+                        <p>Glassmorphism search bar with smooth expand animation on focus. Try clicking on it!</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>🎯 Icon Navigation</h3>
+                        <p>Each navigation link includes relevant icons for better visual hierarchy and user experience.
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>✨ Hover Effects</h3>
+                        <p>Smooth hover animations with background highlights and underline effects for better
+                            interactivity.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>💎 Glassmorphism</h3>
+                        <p>Modern frosted glass effect with backdrop blur for a premium, contemporary aesthetic.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>📱 Mobile Responsive</h3>
+                        <p>Beautiful mobile menu with glassmorphism design that matches the desktop experience.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>🎨 Logo Glow</h3>
+                        <p>Animated glow effect on logo hover with smooth pulsing animation.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>🚀 CTA Button</h3>
+                        <p>Eye-catching Contact Us button with gradient hover effect and scale animation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <p>👆 Scroll up and down to see the navbar in action!</p>
+                <p style="margin-top: 0.5rem;">Try hovering over the navigation links and the search bar.</p>
+            </div>
+
+            <div class="demo-card">
+                <h2 style="color: #0070c9; font-size: 1.875rem; margin-bottom: 1rem;">🎯 Design Philosophy</h2>
+                <p style="color: #64748b; line-height: 1.75; margin-bottom: 1rem;">
+                    This navbar redesign focuses on creating a <strong>premium, modern, and unique</strong> user
+                    experience that stands out from typical medical equipment websites.
+                </p>
+                <ul style="color: #64748b; line-height: 2; margin-left: 1.5rem;">
+                    <li>✅ <strong>Visual Excellence:</strong> Vibrant gradients and smooth animations</li>
+                    <li>✅ <strong>User Engagement:</strong> Interactive elements that respond to user actions</li>
+                    <li>✅ <strong>Brand Identity:</strong> Unique design that reflects medical professionalism with
+                        modern aesthetics</li>
+                    <li>✅ <strong>Accessibility:</strong> Clear visual hierarchy and readable text</li>
+                    <li>✅ <strong>Performance:</strong> CSS-based animations for smooth 60fps experience</li>
+                </ul>
+            </div>
+
+            <div class="demo-card"
+                style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0ea5e9;">
+                <h2 style="color: #0070c9; font-size: 1.875rem; margin-bottom: 1rem;">🚀 Ready to Apply?</h2>
+                <p style="color: #475569; line-height: 1.75;">
+                    If you like this design, I can apply it to all pages of your website. The navbar will maintain
+                    consistency across your entire site while providing a premium, modern look that will impress your
+                    visitors!
+                </p>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-surface-100 pt-16 pb-8 border-t border-border mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-tertiary text-sm">
-            <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="../js/main.js" defer></script>
-    <script src="../js/products.js" defer></script>
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileMenu.classList.toggle("hidden");
+        }
+
         // Navbar scroll effect
         window.addEventListener('scroll', function () {
             const nav = document.getElementById('main-nav');
@@ -194,7 +332,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>

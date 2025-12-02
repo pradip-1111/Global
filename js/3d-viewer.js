@@ -151,7 +151,7 @@ class Model3DViewer {
     }
 
     loadModel(modelPath) {
-        const fullPath = `./assets/${modelPath}`;
+        const fullPath = `../assets/${modelPath}`;
         console.log(`Loading: ${modelPath}`);
 
         // Show loading

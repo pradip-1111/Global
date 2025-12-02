@@ -4,55 +4,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    Aryan Global Commerce - Leading Medical Equipment Export Solutions
-  </title>
+  <title>Aryan Global Commerce - Leading Medical Equipment Export Solutions</title>
   <meta name="description"
-    class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-border-light transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo -->
-      <div class="flex items-center hover-scale cursor-pointer">
-        <div class="flex-shrink-0">
-          <img src="./assets/logo.jpg" alt="Aryan Global Commerce Logo"
-            class="h-12 w-12 rounded-lg object-contain shadow-sm" />
-        </div>
-        <div class="ml-3">
-          <h1 class="text-xl font-bold text-primary tracking-tight">
-            Aryan Global Commerce
-          </h1>
-          <p class="text-xs text-text-secondary font-medium tracking-wide">PVT. LTD.</p>
-        </div>
-      </div>
+    content="Aryan Global Commerce - Your trusted partner for WHO-GMP, CE, and ISO certified medical equipment and pharmaceutical exports worldwide. Quality healthcare solutions for global markets." />
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-center space-x-8">
-          <a href="homepage.html"
-            class="text-primary font-semibold text-sm hover:text-primary-700 transition-colors">Home</a>
-          <a href="product_catalog.html"
-            class="text-text-secondary hover:text-primary font-medium text-sm transition-colors">Products</a>
-          <a href="3d_models.html"
-            class="text-text-secondary hover:text-primary font-medium text-sm transition-colors">3D Models</a>
-          <a href="about_us.html"
-            class="text-text-secondary hover:text-primary font-medium text-sm transition-colors">About</a>
-          <a href="contact_and_support.html"
-            class="btn-primary shadow-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5">Contact
-            Us</a>
-        </div>
-      </div>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button type="button" class="text-text-secondary hover:text-primary p-2 transition-colors"
-          onclick="toggleMobileMenu()">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-text-primary antialiased">
+  <!-- Modern Premium Navigation -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo with Glow Effect -->
+        <div class="flex items-center group cursor-pointer nav-logo-glow">
+          <div class="relative">
+            <img src="./assets/logo.jpg" alt="Aryan Global Commerce Logo"
+              class="h-14 w-14 rounded-xl object-contain shadow-2xl border-2 border-white/30 bg-white/90 p-1 group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <div class="ml-4">
+            <h1
+              class="text-xl font-bold text-white tracking-tight drop-shadow-lg group-hover:text-cyan-100 transition-colors">
+              Aryan Global Commerce
+            </h1>
+            <p class="text-xs text-white/80 font-medium tracking-widest uppercase">Medical Excellence</p>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation with Search -->
+        <div class="hidden lg:flex items-center space-x-2">
+          <!-- Search Bar -->
+          <div class="search-bar flex items-center mr-4">
+            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" placeholder="Search products..." class="ml-2" />
+          </div>
+
+          <!-- Nav Links with Icons -->
+          <a href="index.html" class="nav-link active flex items-center">
+            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Home
+          </a>
+
+          <a href="pages/product_catalog.html" class="nav-link flex items-center">
+            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            Products
+          </a>
+
+          <a href="pages/3d_models.html" class="nav-link flex items-center">
+            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            3D Models
+          </a>
+
+          <a href="pages/about_us.html" class="nav-link flex items-center">
+            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            About
+          </a>
+
+          <!-- CTA Button -->
+          <a href="pages/contact_and_support.html" class="nav-cta ml-2 flex items-center">
+            <span class="flex items-center">
+              <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Contact Us
+            </span>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="lg:hidden">
+          <button type="button" class="p-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300"
+            onclick="toggleMobileMenu()">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Mobile Menu with Glassmorphism -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <div class="mx-4 mt-2 mobile-menu-glass p-4 space-y-2">
+        <!-- Mobile Search -->
+        <div class="mb-2">
+          <div class="flex items-center bg-white/20 rounded-lg px-4 py-3 border border-white/30">
+            <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" placeholder="Search products..."
+              class="ml-2 bg-transparent border-none outline-none text-white placeholder-white/60 text-sm w-full" />
+          </div>
+        </div>
+
+        <a href="index.html"
+          class="flex items-center px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Home
+        </a>
+        <a href="pages/product_catalog.html"
+          class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+          Products
+        </a>
+        <a href="pages/3d_models.html"
+          class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+          </svg>
+          3D Models
+        </a>
+        <a href="pages/about_us.html"
+          class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          About Us
+        </a>
+        <a href="pages/contact_and_support.html"
+          class="flex items-center px-4 py-3 mt-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-cyan-100 transition-all">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
   </nav>
 
   <!-- Hero Section with Video Background -->
@@ -110,11 +223,11 @@
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up"
           style="animation-delay: 0.4s">
-          <a href="product_catalog.html"
+          <a href="pages/product_catalog.html"
             class="btn-primary text-lg px-8 py-4 shadow-glow hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
             Explore Products
           </a>
-          <a href="about_us.html"
+          <a href="pages/about_us.html"
             class="group px-8 py-4 rounded-lg border border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 flex items-center justify-center">
             Learn More
             <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
@@ -324,7 +437,7 @@
       <div class="text-center mb-20">
         <span class="text-primary font-semibold tracking-wider uppercase text-sm">Our Solutions</span>
         <h2 class="text-4xl md:text-5xl font-bold mt-3 text-text-primary">Featured Product Categories</h2>
-        <a href="product_catalog.html"
+        <a href="pages/product_catalog.html"
           class="inline-flex items-center mt-4 text-primary font-semibold hover:text-primary-700 transition-colors">
           <span>View All Products</span>
           <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -335,7 +448,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Category 1 - Diagnostic Equipment -->
-        <a href="product_catalog.html"
+        <a href="pages/product_catalog.html"
           class="group relative bg-white rounded-2xl p-8 shadow-md border-2 border-gray-100 hover:border-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
           <div
             class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500">
@@ -362,7 +475,7 @@
         </a>
 
         <!-- Category 2 - Surgical Instruments -->
-        <a href="product_catalog.html"
+        <a href="pages/product_catalog.html"
           class="group relative bg-white rounded-2xl p-8 shadow-md border-2 border-gray-100 hover:border-accent hover:shadow-2xl transition-all duration-300 overflow-hidden">
           <div
             class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500">
@@ -389,7 +502,7 @@
         </a>
 
         <!-- Category 3 - Pharmaceuticals -->
-        <a href="product_catalog.html"
+        <a href="pages/product_catalog.html"
           class="group relative bg-white rounded-2xl p-8 shadow-md border-2 border-gray-100 hover:border-secondary-800 hover:shadow-2xl transition-all duration-300 overflow-hidden">
           <div
             class="absolute top-0 right-0 w-32 h-32 bg-secondary-800/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500">
@@ -417,7 +530,7 @@
         </a>
 
         <!-- Category 4 - Patient Care -->
-        <a href="product_catalog.html"
+        <a href="pages/product_catalog.html"
           class="group relative bg-white rounded-2xl p-8 shadow-md border-2 border-gray-100 hover:border-purple-600 hover:shadow-2xl transition-all duration-300 overflow-hidden">
           <div
             class="absolute top-0 right-0 w-32 h-32 bg-purple-600/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500">
@@ -492,17 +605,18 @@
         <div>
           <h4 class="text-white font-semibold mb-6 uppercase text-sm tracking-wider">Quick Links</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="homepage.html" class="text-gray-400 hover:text-white transition-colors flex items-center"><span
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center"><span
                   class="w-1.5 h-1.5 bg-primary rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>Home</a>
             </li>
-            <li><a href="product_catalog.html"
+            <li><a href="pages/product_catalog.html"
                 class="text-gray-400 hover:text-white transition-colors flex items-center"><span
                   class="w-1.5 h-1.5 bg-primary rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>Products</a>
             </li>
-            <li><a href="about_us.html" class="text-gray-400 hover:text-white transition-colors flex items-center"><span
+            <li><a href="pages/about_us.html"
+                class="text-gray-400 hover:text-white transition-colors flex items-center"><span
                   class="w-1.5 h-1.5 bg-primary rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>About
                 Us</a></li>
-            <li><a href="contact_and_support.html"
+            <li><a href="pages/contact_and_support.html"
                 class="text-gray-400 hover:text-white transition-colors flex items-center"><span
                   class="w-1.5 h-1.5 bg-primary rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>Contact</a>
             </li>
@@ -513,15 +627,18 @@
         <div>
           <h4 class="text-white font-semibold mb-6 uppercase text-sm tracking-wider">Services</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="product_catalog.html" class="text-gray-400 hover:text-white transition-colors">Medical
+            <li><a href="pages/product_catalog.html" class="text-gray-400 hover:text-white transition-colors">Medical
                 Equipment</a></li>
-            <li><a href="product_catalog.html" class="text-gray-400 hover:text-white transition-colors">Pharmaceutical
+            <li><a href="pages/product_catalog.html"
+                class="text-gray-400 hover:text-white transition-colors">Pharmaceutical
                 Products</a></li>
-            <li><a href="global_solutions.html" class="text-gray-400 hover:text-white transition-colors">Healthcare
+            <li><a href="pages/global_solutions.html"
+                class="text-gray-400 hover:text-white transition-colors">Healthcare
                 Solutions</a></li>
-            <li><a href="contact_and_support.html" class="text-gray-400 hover:text-white transition-colors">Technical
+            <li><a href="pages/contact_and_support.html"
+                class="text-gray-400 hover:text-white transition-colors">Technical
                 Support</a></li>
-            <li><a href="contact_and_support.html" class="text-gray-400 hover:text-white transition-colors">Global
+            <li><a href="pages/contact_and_support.html" class="text-gray-400 hover:text-white transition-colors">Global
                 Logistics</a></li>
           </ul>
         </div>
@@ -587,16 +704,25 @@
       .getElementById("equipment-search")
       ?.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-          window.location.href = "product_catalog.html";
+          window.location.href = "pages/product_catalog.html";
         }
       });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
   </script>
-  <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 
   <!-- Custom Scripts -->
-  <script src="../js/main.js"></script>
-  <script src="../js/home.js"></script>
-  <script src="../js/globe.js"></script>
-  </body>
+  <script src="./js/main.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/globe.js"></script>
+</body>
 
 </html>

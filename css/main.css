@@ -716,10 +716,6 @@ h1, h2, h3, h4, h5, h6 {
   visibility: visible;
 }
 
-.static{
-  position: static;
-}
-
 .fixed{
   position: fixed;
 }
@@ -2028,10 +2024,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-center{
   text-align: center;
-}
-
-.font-inter{
-  font-family: Inter, system-ui, sans-serif;
 }
 
 .text-2xl{
