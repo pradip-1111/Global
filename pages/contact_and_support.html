@@ -354,240 +354,233 @@
         </div>
 
         <!-- Right Side - Form -->
-                  <div class="lg:col-span-3">
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 border border-gray-100">
-                      <!-- Success Message -->
-                      <div id="success-message"
-                        class="hidden mb-8 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3 animate-fade-in">
-                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 class="font-bold text-green-800">Message Sent Successfully!</h4>
-                          <p class="text-sm text-green-700">We'll get back to you within 24 hours.</p>
-                        </div>
-                      </div>
+        <div class="lg:col-span-3">
+          <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 border border-gray-100">
+            <!-- Success Message -->
+            <div id="success-message"
+              class="hidden mb-8 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3 animate-fade-in">
+              <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-green-800">Message Sent Successfully!</h4>
+                <p class="text-sm text-green-700">We'll get back to you within 24 hours.</p>
+              </div>
+            </div>
 
-                      <form id="contact-form" action="https://formsubmit.co/support@rnglobalcommerce.com" method="POST"
-                        class="space-y-6">
-                        <!-- FormSubmit Configuration -->
-                        <input type="hidden" name="_subject"
-                          value="New Contact Form Submission - Aryan Global Commerce">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+            <form id="contact-form" action="https://formsubmit.co/support@rnglobalcommerce.com" method="POST"
+              class="space-y-6">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" value="New Inquiry - Aryan Global Commerce Website">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_autoresponse"
+                value="Thank you for contacting Aryan Global Commerce. We have received your message and will get back to you shortly.">
 
-                        <!-- Name Fields -->
-                        <div class="grid md:grid-cols-2 gap-6">
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">First Name <span
-                                class="text-red-500">*</span></label>
-                            <input type="text" name="firstName" required
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
-                              placeholder="John">
-                          </div>
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Last Name <span
-                                class="text-red-500">*</span></label>
-                            <input type="text" name="lastName" required
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
-                              placeholder="Doe">
-                          </div>
-                        </div>
+              <!-- Name Fields -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">First Name <span
+                      class="text-red-500">*</span></label>
+                  <input type="text" name="firstName" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
+                    placeholder="John">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">Last Name <span
+                      class="text-red-500">*</span></label>
+                  <input type="text" name="lastName" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
+                    placeholder="Doe">
+                </div>
+              </div>
 
-                        <!-- Email & Phone -->
-                        <div class="grid md:grid-cols-2 gap-6">
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Email Address <span
-                                class="text-red-500">*</span></label>
-                            <input type="email" name="email" required
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
-                              placeholder="john@example.com">
-                          </div>
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Phone Number</label>
-                            <input type="tel" name="phone"
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
-                              placeholder="+1 (555) 000-0000">
-                          </div>
-                        </div>
+              <!-- Email & Phone -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">Email Address <span
+                      class="text-red-500">*</span></label>
+                  <input type="email" name="email" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
+                    placeholder="john@example.com">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">Phone Number</label>
+                  <input type="tel" name="phone"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
+                    placeholder="+1 (555) 000-0000">
+                </div>
+              </div>
 
-                        <!-- Company & Country -->
-                        <div class="grid md:grid-cols-2 gap-6">
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Company Name</label>
-                            <input type="text" name="company"
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
-                              placeholder="Your Company">
-                          </div>
-                          <div class="space-y-2">
-                            <label class="text-sm font-semibold text-gray-700">Country</label>
-                            <div class="relative">
-                              <select name="country"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white appearance-none cursor-pointer">
-                                <option>Select Country</option>
-                                <option>United States</option>
-                                <option>United Kingdom</option>
-                                <option>Canada</option>
-                                <option>India</option>
-                                <option>Australia</option>
-                                <option>Germany</option>
-                                <option>France</option>
-                                <option>Other</option>
-                              </select>
-                              <div
-                                class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                  </path>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Subject -->
-                        <div class="space-y-2">
-                          <label class="text-sm font-semibold text-gray-700">Subject <span
-                              class="text-red-500">*</span></label>
-                          <div class="relative">
-                            <select name="subject" required
-                              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white appearance-none cursor-pointer">
-                              <option value="">Select a subject</option>
-                              <option>Product Inquiry</option>
-                              <option>Partnership Opportunity</option>
-                              <option>Technical Support</option>
-                              <option>Pricing Information</option>
-                              <option>Certification Questions</option>
-                              <option>Other</option>
-                            </select>
-                            <div
-                              class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 9l-7 7-7-7">
-                                </path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Message -->
-                        <div class="space-y-2">
-                          <label class="text-sm font-semibold text-gray-700">Message <span
-                              class="text-red-500">*</span></label>
-                          <textarea name="message" rows="5" required
-                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white resize-none"
-                            placeholder="Tell us more about your inquiry..."></textarea>
-                        </div>
-
-                        <!-- Honeypot -->
-                        <input type="text" name="_gotcha" style="display:none">
-
-                        <!-- Submit Button -->
-                        <button type="submit" id="submit-btn"
-                          class="w-full group relative overflow-hidden bg-gray-900 text-white py-4 rounded-xl font-bold transition-all hover:scale-[1.02] shadow-xl hover:shadow-2xl hover:shadow-primary-500/20">
-                          <div
-                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-600 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          </div>
-                          <div class="relative flex items-center justify-center gap-2">
-                            <span id="btn-text">Send Message</span>
-                            <svg id="btn-icon" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                              fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3">
-                              </path>
-                            </svg>
-                          </div>
-                        </button>
-
-                        <p class="text-xs text-gray-500 text-center">
-                          By submitting this form, you agree to our <a href="#"
-                            class="text-primary-600 hover:underline">privacy
-                            policy</a>.
-                        </p>
-                      </form>
+              <!-- Company & Country -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">Company Name</label>
+                  <input type="text" name="company"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white"
+                    placeholder="Your Company">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-semibold text-gray-700">Country</label>
+                  <div class="relative">
+                    <select name="country"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white appearance-none cursor-pointer">
+                      <option>Select Country</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>Canada</option>
+                      <option>India</option>
+                      <option>Australia</option>
+                      <option>Germany</option>
+                      <option>France</option>
+                      <option>Other</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
 
-            <!-- Footer -->
-            <footer class="bg-surface-100 pt-16 pb-8 border-t border-border">
-              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-tertiary text-sm">
-                <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
+              <!-- Subject -->
+              <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-700">Subject <span class="text-red-500">*</span></label>
+                <div class="relative">
+                  <select name="subject" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white appearance-none cursor-pointer">
+                    <option value="">Select a subject</option>
+                    <option>Product Inquiry</option>
+                    <option>Partnership Opportunity</option>
+                    <option>Technical Support</option>
+                    <option>Pricing Information</option>
+                    <option>Certification Questions</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
               </div>
-            </footer>
 
-            <script>
-              // Handle form submission
-              const form = document.getElementById('contact-form');
-              const submitBtn = document.getElementById('submit-btn');
-              const btnText = document.getElementById('btn-text');
-              const successMsg = document.getElementById('success-message');
+              <!-- Message -->
+              <div class="space-y-2">
+                <label class="text-sm font-semibold text-gray-700">Message <span class="text-red-500">*</span></label>
+                <textarea name="message" rows="5" required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all outline-none bg-gray-50 focus:bg-white resize-none"
+                  placeholder="Tell us more about your inquiry..."></textarea>
+              </div>
 
-              form.addEventListener('submit', async function (e) {
-                e.preventDefault();
+              <!-- Honeypot -->
+              <input type="text" name="_gotcha" style="display:none">
 
-                // Show loading state
-                btnText.textContent = 'Sending...';
-                submitBtn.disabled = true;
+              <!-- Submit Button -->
+              <button type="submit" id="submit-btn"
+                class="w-full group relative overflow-hidden bg-gray-900 text-white py-4 rounded-xl font-bold transition-all hover:scale-[1.02] shadow-xl hover:shadow-2xl hover:shadow-primary-500/20">
+                <div
+                  class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-600 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="relative flex items-center justify-center gap-2">
+                  <span id="btn-text">Send Message</span>
+                  <svg id="btn-icon" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                  </svg>
+                </div>
+              </button>
 
-                try {
-                  const formData = new FormData(form);
+              <p class="text-xs text-gray-500 text-center">
+                By submitting this form, you agree to our <a href="#" class="text-primary-600 hover:underline">privacy
+                  policy</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                  // Use FormSubmit AJAX endpoint
-                  const response = await fetch('https://formsubmit.co/ajax/support@rnglobalcommerce.com', {
-                    method: 'POST',
-                    body: formData
-                  });
+  <!-- Footer -->
+  <footer class="bg-surface-100 pt-16 pb-8 border-t border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-tertiary text-sm">
+      <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-                  const data = await response.json();
+  <script>
+    // Handle form submission
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const successMsg = document.getElementById('success-message');
 
-                  if (data.success === "true" || response.ok) {
-                    // Show success message
-                    successMsg.classList.remove('hidden');
-                    form.reset();
-                    btnText.textContent = 'Message Sent!';
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-                    // Reset button after 3 seconds
-                    setTimeout(() => {
-                      btnText.textContent = 'Send Message';
-                      submitBtn.disabled = false;
-                      successMsg.classList.add('hidden');
-                    }, 3000);
-                  } else {
-                    throw new Error(data.message || 'Form submission failed');
-                  }
-                } catch (error) {
-                  console.error('Form Error:', error);
+      // Show loading state
+      btnText.textContent = 'Sending...';
+      submitBtn.disabled = true;
 
-                  // Fallback to standard submission if AJAX fails
-                  alert('Submitting via standard method...');
-                  form.submit();
-                }
-              });
+      try {
+        const formData = new FormData(form);
 
-              // Mobile menu toggle
-              function toggleMobileMenu() {
-                const menu = document.getElementById('mobile-menu');
-                menu.classList.toggle('hidden');
-              }
+        // Use FormSubmit AJAX endpoint
+        const response = await fetch('https://formsubmit.co/ajax/support@rnglobalcommerce.com', {
+          method: 'POST',
+          body: formData
+        });
 
-              // Navbar scroll effect
-              window.addEventListener('scroll', function () {
-                const nav = document.getElementById('main-nav');
-                if (window.scrollY > 50) {
-                  nav.classList.add('scrolled');
-                } else {
-                  nav.classList.remove('scrolled');
-                }
-              });
-            </script>
+        const data = await response.json();
+
+        if (data.success === "true" || response.ok) {
+          // Show success message
+          successMsg.classList.remove('hidden');
+          form.reset();
+          btnText.textContent = 'Message Sent!';
+
+          // Reset button after 3 seconds
+          setTimeout(() => {
+            btnText.textContent = 'Send Message';
+            submitBtn.disabled = false;
+            successMsg.classList.add('hidden');
+          }, 3000);
+        } else {
+          throw new Error(data.message || 'Form submission failed');
+        }
+      } catch (error) {
+        console.error('Form Error:', error);
+
+        // Fallback to standard submission if AJAX fails
+        alert('Submitting via standard method...');
+        form.submit();
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 
