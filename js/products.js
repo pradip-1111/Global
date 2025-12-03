@@ -78,7 +78,7 @@ const products = [
   {
     id: "ph-001",
     name: "Antibiotic Capsules",
-    category: "nutraceuticals",
+    category: "pharmaceuticals",
     image: "../assets/products/amoxicillin.jpg",
     description: "Broad-spectrum antibiotic for treating bacterial infections.",
     features: [
@@ -91,8 +91,8 @@ const products = [
   {
     id: "ph-002",
     name: "Vaccine",
-    category: "nutraceuticals",
-    image: "../assets/products/paracetamol.jpg",
+    category: "pharmaceuticals",
+    image: "../assets/products/vaccine.jpg",
     description:
       "Effective analgesic and antipyretic for pain relief and fever reduction.",
     features: [
@@ -105,7 +105,7 @@ const products = [
   {
     id: "ph-003",
     name: "Health Supplements",
-    category: "nutraceuticals",
+    category: "pharmaceuticals",
     image: "../assets/products/vitaminc.jpg",
     description: "Immunity boosting Vitamin C chewable tablets.",
     features: [
@@ -118,7 +118,7 @@ const products = [
   {
     id: "ph-004",
     name: "Insulin Injection",
-    category: "nutraceuticals",
+    category: "pharmaceuticals",
     image: "../assets/products/insulin.jpeg",
     description: "Rapid-acting insulin for diabetes management.",
     features: [
@@ -131,7 +131,7 @@ const products = [
   {
     id: "ph-005",
     name: "Surgical Gloves",
-    category: "nutraceuticals",
+    category: "pharmaceuticals",
     image: "../assets/products/Gloves.jpeg",
     description: "Sterile latex surgical gloves for medical procedures.",
     features: [
@@ -144,7 +144,7 @@ const products = [
   {
     id: "ph-006",
     name: "N95 Respirator Masks",
-    category: "nutraceuticals",
+    category: "pharmaceuticals",
     image: "../assets/products/masks.jpg",
     description:
       "High-filtration face masks for protection against airborne particles.",
