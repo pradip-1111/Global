@@ -1,516 +1,897 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Catalog | Aryan Global Commerce - Medical Equipment</title>
-    <meta name="description"
-        content="Browse our extensive catalog of medical equipment, laboratory instruments, and pharmaceutical products. High-quality, certified solutions for global healthcare." />
+    <meta
+      name="description"
+      content="Browse our extensive catalog of medical equipment, laboratory instruments, and pharmaceutical products. High-quality, certified solutions for global healthcare."
+    />
 
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .filter-btn.active {
+        background-color: #0070c9;
+        color: white;
+        border-color: #0070c9;
+      }
+
+      #product-modal {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 9999 !important;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
         }
 
-        .filter-btn.active {
-            background-color: #0070C9;
-            color: white;
-            border-color: #0070C9;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
 
-        #product-modal {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            z-index: 9999 !important;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        25% {
+          transform: translateY(-20px) translateX(10px);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        50% {
+          transform: translateY(-10px) translateX(-10px);
         }
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-
-            25% {
-                transform: translateY(-20px) translateX(10px);
-            }
-
-            50% {
-                transform: translateY(-10px) translateX(-10px);
-            }
-
-            75% {
-                transform: translateY(-30px) translateX(5px);
-            }
+        75% {
+          transform: translateY(-30px) translateX(5px);
         }
+      }
 
-        .animate-fade-in-down {
-            animation: fadeInDown 0.6s ease-out;
-        }
+      .animate-fade-in-down {
+        animation: fadeInDown 0.6s ease-out;
+      }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out;
+      }
 
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
 
-        .glass-card-dark {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+      .glass-card-dark {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
     </style>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Medical Equipment",
-          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=medical-equipment"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Laboratory Instruments",
-          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=laboratory-instruments"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Pharmaceuticals",
-          "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=pharmaceuticals"
-        }
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Medical Equipment",
+            "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=medical-equipment"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Laboratory Instruments",
+            "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=laboratory-instruments"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pharmaceuticals",
+            "url": "https://aryanglobalcommerce.com/pages/product_catalog.html?category=pharmaceuticals"
+          }
+        ]
+      }
     </script>
-</head>
+  </head>
 
-<body class="bg-background text-text-primary antialiased">
+  <body class="bg-background text-text-primary antialiased">
     <!-- Modern Premium Navigation -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo with Glow Effect -->
-                <div class="flex items-center group cursor-pointer nav-logo-glow">
-                    <div class="relative">
-                        <img src="../assets/logo.jpg" alt="Aryan Global Commerce Logo"
-                            class="h-14 w-14 rounded-xl object-contain shadow-2xl border-2 border-white/30 bg-white/90 p-1 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div class="ml-4">
-                        <h1
-                            class="text-xl font-bold text-white tracking-tight drop-shadow-lg group-hover:text-cyan-100 transition-colors">
-                            Aryan Global Commerce
-                        </h1>
-                        <p class="text-xs text-white/80 font-medium tracking-widest uppercase">Medical Excellence</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation with Search -->
-                <div class="hidden lg:flex items-center space-x-2">
-                    <!-- Search Bar -->
-                    <div class="search-bar flex items-center mr-4">
-                        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <input type="text" placeholder="Search products..." class="ml-2" />
-                    </div>
-
-                    <!-- Nav Links with Icons -->
-                    <a href="../index.html" class="nav-link flex items-center">
-                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                        Home
-                    </a>
-
-                    <a href="product_catalog.html" class="nav-link active flex items-center">
-                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                        Products
-                    </a>
-
-                    <a href="3d_models.html" class="nav-link flex items-center">
-                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-                        </svg>
-                        3D Models
-                    </a>
-
-                    <a href="about_us.html" class="nav-link flex items-center">
-                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        About
-                    </a>
-
-                    <!-- CTA Button -->
-                    <a href="contact_and_support.html" class="nav-cta ml-2 flex items-center">
-                        <span class="flex items-center">
-                            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            Contact Us
-                        </span>
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="lg:hidden">
-                    <button type="button"
-                        class="p-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300"
-                        onclick="toggleMobileMenu()">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+    <nav
+      id="main-nav"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo with Glow Effect -->
+          <div class="flex items-center group cursor-pointer nav-logo-glow">
+            <div class="relative">
+              <img
+                src="../assets/logo.jpg"
+                alt="Aryan Global Commerce Logo"
+                class="h-14 w-14 rounded-xl object-contain shadow-2xl border-2 border-white/30 bg-white/90 p-1 group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
-        </div>
-
-        <!-- Mobile Menu with Glassmorphism -->
-        <div id="mobile-menu" class="hidden lg:hidden">
-            <div class="mx-4 mt-2 mobile-menu-glass p-4 space-y-2">
-                <!-- Mobile Search -->
-                <div class="mb-2">
-                    <div class="flex items-center bg-white/20 rounded-lg px-4 py-3 border border-white/30">
-                        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <input type="text" placeholder="Search products..."
-                            class="ml-2 bg-transparent border-none outline-none text-white placeholder-white/60 text-sm w-full" />
-                    </div>
-                </div>
-
-                <a href="../index.html"
-                    class="flex items-center px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/20 transition-all">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                    Home
-                </a>
-                <a href="product_catalog.html"
-                    class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                    Products
-                </a>
-                <a href="3d_models.html"
-                    class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-                    </svg>
-                    3D Models
-                </a>
-                <a href="about_us.html"
-                    class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    About Us
-                </a>
-                <a href="contact_and_support.html"
-                    class="flex items-center px-4 py-3 mt-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-cyan-100 transition-all">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    Contact Us
-                </a>
+            <div class="ml-4">
+              <h1
+                class="text-xl font-bold text-white tracking-tight drop-shadow-lg group-hover:text-cyan-100 transition-colors"
+              >
+                Aryan Global Commerce
+              </h1>
+              <p
+                class="text-xs text-white/80 font-medium tracking-widest uppercase"
+              >
+                Medical Excellence
+              </p>
             </div>
+          </div>
+
+          <!-- Desktop Navigation with Search -->
+          <div class="hidden lg:flex items-center space-x-2">
+            <!-- Search Bar -->
+            <div class="search-bar flex items-center mr-4">
+              <svg
+                class="w-5 h-5 text-white/70"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="ml-2"
+              />
+            </div>
+
+            <!-- Nav Links with Icons -->
+            <a href="../index.html" class="nav-link flex items-center">
+              <svg
+                class="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+              Home
+            </a>
+
+            <a
+              href="product_catalog.html"
+              class="nav-link active flex items-center"
+            >
+              <svg
+                class="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                />
+              </svg>
+              Products
+            </a>
+
+            <a href="3d_models.html" class="nav-link flex items-center">
+              <svg
+                class="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+                />
+              </svg>
+              3D Models
+            </a>
+
+            <a href="about_us.html" class="nav-link flex items-center">
+              <svg
+                class="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              About
+            </a>
+
+            <!-- CTA Button -->
+            <a
+              href="contact_and_support.html"
+              class="nav-cta ml-2 flex items-center"
+            >
+              <span class="flex items-center">
+                <svg
+                  class="nav-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Contact Us
+              </span>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              type="button"
+              class="p-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300"
+              onclick="toggleMobileMenu()"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Mobile Menu with Glassmorphism -->
+      <div id="mobile-menu" class="hidden lg:hidden">
+        <div class="mx-4 mt-2 mobile-menu-glass p-4 space-y-2">
+          <!-- Mobile Search -->
+          <div class="mb-2">
+            <div
+              class="flex items-center bg-white/20 rounded-lg px-4 py-3 border border-white/30"
+            >
+              <svg
+                class="w-5 h-5 text-white/70"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="ml-2 bg-transparent border-none outline-none text-white placeholder-white/60 text-sm w-full"
+              />
+            </div>
+          </div>
+
+          <a
+            href="../index.html"
+            class="flex items-center px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/20 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+            Home
+          </a>
+          <a
+            href="product_catalog.html"
+            class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+              />
+            </svg>
+            Products
+          </a>
+          <a
+            href="3d_models.html"
+            class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
+              />
+            </svg>
+            3D Models
+          </a>
+          <a
+            href="about_us.html"
+            class="flex items-center px-4 py-3 text-white/90 font-medium rounded-lg hover:bg-white/20 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            About Us
+          </a>
+          <a
+            href="contact_and_support.html"
+            class="flex items-center px-4 py-3 mt-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-cyan-100 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            Contact Us
+          </a>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section with Gradient & Animations -->
     <section
-        class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 py-32 overflow-hidden pt-40">
-        <!-- Animated Background Patterns -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"
-                style="animation-delay: 1s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-300 rounded-full blur-3xl animate-pulse"
-                style="animation-delay: 0.5s;"></div>
+      class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 py-32 overflow-hidden pt-40"
+    >
+      <!-- Animated Background Patterns -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-300 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 0.5s"
+        ></div>
+      </div>
+
+      <!-- Floating Particles Animation -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute w-2 h-2 bg-white/30 rounded-full animate-float"
+          style="top: 20%; left: 10%; animation-duration: 3s"
+        ></div>
+        <div
+          class="absolute w-3 h-3 bg-white/20 rounded-full animate-float"
+          style="
+            top: 60%;
+            left: 80%;
+            animation-duration: 4s;
+            animation-delay: 1s;
+          "
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-white/40 rounded-full animate-float"
+          style="
+            top: 40%;
+            left: 60%;
+            animation-duration: 5s;
+            animation-delay: 0.5s;
+          "
+        ></div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <!-- Badge -->
+        <div
+          class="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-semibold animate-fade-in-down"
+        >
+          Premium Medical Equipment
         </div>
 
-        <!-- Floating Particles Animation -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute w-2 h-2 bg-white/30 rounded-full animate-float"
-                style="top: 20%; left: 10%; animation-duration: 3s;"></div>
-            <div class="absolute w-3 h-3 bg-white/20 rounded-full animate-float"
-                style="top: 60%; left: 80%; animation-duration: 4s; animation-delay: 1s;"></div>
-            <div class="absolute w-2 h-2 bg-white/40 rounded-full animate-float"
-                style="top: 40%; left: 60%; animation-duration: 5s; animation-delay: 0.5s;"></div>
-        </div>
+        <!-- Main Heading -->
+        <h1
+          class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up"
+        >
+          Our Product <span class="text-cyan-300">Catalog</span>
+        </h1>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <!-- Badge -->
+        <!-- Description -->
+        <p
+          class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10 animate-fade-in-up"
+          style="animation-delay: 0.2s"
+        >
+          Explore our comprehensive range of WHO-GMP, CE, and ISO certified
+          medical equipment and supplies, sourced to meet global healthcare
+          standards.
+        </p>
+
+        <!-- Trust Badges with Animation -->
+        <div
+          class="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in-up"
+          style="animation-delay: 0.4s"
+        >
+          <div
+            class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300"
+          >
             <div
-                class="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-semibold animate-fade-in-down">
-                Premium Medical Equipment
-            </div>
-
-            <!-- Main Heading -->
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
-                Our Product <span class="text-cyan-300">Catalog</span>
-            </h1>
-
-            <!-- Description -->
-            <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10 animate-fade-in-up"
-                style="animation-delay: 0.2s;">
-                Explore our comprehensive range of WHO-GMP, CE, and ISO certified medical equipment and supplies,
-                sourced to meet global healthcare standards.
-            </p>
-
-            <!-- Trust Badges with Animation -->
-            <div class="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
-                <div
-                    class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300">
-                    <div class="w-3 h-3 rounded-full bg-green-400 shadow-[0_0_15px_rgba(74,222,128,0.6)] animate-pulse">
-                    </div>
-                    <span class="text-white text-sm font-semibold">WHO-GMP Certified</span>
-                </div>
-                <div
-                    class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300">
-                    <div class="w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.6)] animate-pulse"
-                        style="animation-delay: 0.2s;"></div>
-                    <span class="text-white text-sm font-semibold">CE Certified</span>
-                </div>
-                <div
-                    class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300">
-                    <div class="w-3 h-3 rounded-full bg-purple-400 shadow-[0_0_15px_rgba(192,132,252,0.6)] animate-pulse"
-                        style="animation-delay: 0.4s;"></div>
-                    <span class="text-white text-sm font-semibold">ISO 9001:2015</span>
-                </div>
-                <div
-                    class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300">
-                    <div class="w-3 h-3 rounded-full bg-red-400 shadow-[0_0_15px_rgba(248,113,113,0.6)] animate-pulse"
-                        style="animation-delay: 0.6s;"></div>
-                    <span class="text-white text-sm font-semibold">USFDA Approved</span>
-                </div>
-            </div>
-
-            <!-- Scroll Indicator -->
-            <div class="mt-12 animate-bounce">
-                <svg class="w-6 h-6 mx-auto text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
+              class="w-3 h-3 rounded-full bg-green-400 shadow-[0_0_15px_rgba(74,222,128,0.6)] animate-pulse"
+            ></div>
+            <span class="text-white text-sm font-semibold"
+              >WHO-GMP Certified</span
+            >
+          </div>
+          <div
+            class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300"
+          >
+            <div
+              class="w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.6)] animate-pulse"
+              style="animation-delay: 0.2s"
+            ></div>
+            <span class="text-white text-sm font-semibold">CE Certified</span>
+          </div>
+          <div
+            class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300"
+          >
+            <div
+              class="w-3 h-3 rounded-full bg-purple-400 shadow-[0_0_15px_rgba(192,132,252,0.6)] animate-pulse"
+              style="animation-delay: 0.4s"
+            ></div>
+            <span class="text-white text-sm font-semibold">ISO 9001:2015</span>
+          </div>
+          <div
+            class="glass-card-dark rounded-xl px-5 py-3 flex items-center gap-3 hover:scale-110 transition-transform duration-300"
+          >
+            <div
+              class="w-3 h-3 rounded-full bg-red-400 shadow-[0_0_15px_rgba(248,113,113,0.6)] animate-pulse"
+              style="animation-delay: 0.6s"
+            ></div>
+            <span class="text-white text-sm font-semibold">USFDA Approved</span>
+          </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="mt-12 animate-bounce">
+          <svg
+            class="w-6 h-6 mx-auto text-white/80"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            ></path>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Search & Filter Bar -->
-        <div class="flex flex-col md:flex-row gap-4 mb-10">
-            <div class="relative flex-grow">
-                <input type="text" id="equipment-search" placeholder="Search products..."
-                    class="w-full pl-12 pr-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm" />
-                <svg class="w-5 h-5 text-text-tertiary absolute left-4 top-3.5" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </div>
-            <button onclick="toggleFilters()"
-                class="px-6 py-3 bg-white border border-border rounded-xl font-medium text-text-secondary hover:bg-surface-50 transition-colors flex items-center gap-2 shadow-sm">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
-                    </path>
-                </svg>
-                Filters
-            </button>
+      <!-- Search & Filter Bar -->
+      <div class="flex flex-col md:flex-row gap-4 mb-10">
+        <div class="relative flex-grow">
+          <input
+            type="text"
+            id="equipment-search"
+            placeholder="Search products..."
+            class="w-full pl-12 pr-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm"
+          />
+          <svg
+            class="w-5 h-5 text-text-tertiary absolute left-4 top-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
         </div>
+        <button
+          onclick="toggleFilters()"
+          class="px-6 py-3 bg-white border border-border rounded-xl font-medium text-text-secondary hover:bg-surface-50 transition-colors flex items-center gap-2 shadow-sm"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+            ></path>
+          </svg>
+          Filters
+        </button>
+      </div>
 
-        <!-- Advanced Filters Panel -->
-        <div id="filters-panel" class="hidden bg-white border border-border rounded-xl p-6 mb-8 shadow-soft">
-            <div class="grid md:grid-cols-4 gap-6">
-                <div>
-                    <label class="block text-sm font-semibold text-text-primary mb-2">Category</label>
-                    <select class="w-full rounded-lg border-border focus:ring-primary-500">
-                        <option>All Categories</option>
-                        <option>Medical Equipment</option>
-                        <option>Lab Instruments</option>
-                        <option>Pharmaceuticals</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mt-6 flex justify-end gap-3">
-                <button onclick="resetFilters()"
-                    class="text-text-secondary hover:text-primary-600 font-medium px-4 py-2">Reset</button>
-                <button onclick="applyFilters()"
-                    class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700">Apply</button>
-            </div>
+      <!-- Advanced Filters Panel -->
+      <div
+        id="filters-panel"
+        class="hidden bg-white border border-border rounded-xl p-6 mb-8 shadow-soft"
+      >
+        <div class="grid md:grid-cols-4 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-text-primary mb-2"
+              >Category</label
+            >
+            <select
+              class="w-full rounded-lg border-border focus:ring-primary-500"
+            >
+              <option>All Categories</option>
+              <option>Medical Equipment</option>
+              <option>Lab Instruments</option>
+              <option>Nutraceuticals</option>
+            </select>
+          </div>
         </div>
-
-        <!-- Category Tabs -->
-        <div class="flex flex-wrap gap-3 mb-12 justify-center">
-            <button
-                class="filter-btn active px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
-                data-category="all" onclick="filterByCategory('all')">All</button>
-            <button
-                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
-                data-category="medical-equipment" onclick="filterByCategory('medical-equipment')">Medical
-                Equipment</button>
-            <button
-                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
-                data-category="laboratory-instruments" onclick="filterByCategory('laboratory-instruments')">Lab
-                Instruments</button>
-            <button
-                class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
-                data-category="pharmaceuticals" onclick="filterByCategory('pharmaceuticals')">Pharmaceuticals</button>
+        <div class="mt-6 flex justify-end gap-3">
+          <button
+            onclick="resetFilters()"
+            class="text-text-secondary hover:text-primary-600 font-medium px-4 py-2"
+          >
+            Reset
+          </button>
+          <button
+            onclick="applyFilters()"
+            class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700"
+          >
+            Apply
+          </button>
         </div>
+      </div>
 
-        <!-- Product Grid Container -->
-        <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Products will be rendered here by js/products.js -->
-        </div>
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap gap-3 mb-12 justify-center">
+        <button
+          class="filter-btn active px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+          data-category="all"
+          onclick="filterByCategory('all')"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+          data-category="medical-equipment"
+          onclick="filterByCategory('medical-equipment')"
+        >
+          Medical Equipment
+        </button>
+        <button
+          class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+          data-category="laboratory-instruments"
+          onclick="filterByCategory('laboratory-instruments')"
+        >
+          Lab Instruments
+        </button>
+        <button
+          class="filter-btn px-5 py-2 rounded-full border border-border bg-white text-text-secondary hover:border-primary-500 hover:text-primary-600 transition-all font-medium text-sm"
+          data-category="pharmaceuticals"
+          onclick="filterByCategory('nutraceuticals')"
+        >
+          Nutraceuticals
+        </button>
+      </div>
 
+      <!-- Product Grid Container -->
+      <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Products will be rendered here by js/products.js -->
+      </div>
     </main>
 
     <!-- Product Modal - Fixed Overlay Popup -->
     <div id="product-modal" class="hidden">
-        <!-- Backdrop -->
-        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);"
-            onclick="closeProductModal()"></div>
+      <!-- Backdrop -->
+      <div
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(4px);
+        "
+        onclick="closeProductModal()"
+      ></div>
 
-        <!-- Modal Content -->
+      <!-- Modal Content -->
+      <div
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+        "
+      >
         <div
-            style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; padding: 1rem;">
-            <div
-                style="position: relative; background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-width: 56rem; width: 100%; overflow: hidden;">
+          style="
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 56rem;
+            width: 100%;
+            overflow: hidden;
+          "
+        >
+          <!-- Close Button -->
+          <button
+            onclick="closeProductModal()"
+            style="
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              z-index: 10;
+              padding: 0.5rem;
+              background: rgba(255, 255, 255, 0.9);
+              border-radius: 9999px;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <svg
+              style="width: 1.5rem; height: 1.5rem"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
 
-                <!-- Close Button -->
-                <button onclick="closeProductModal()"
-                    style="position: absolute; top: 1rem; right: 1rem; z-index: 10; padding: 0.5rem; background: rgba(255,255,255,0.9); border-radius: 9999px; border: none; cursor: pointer;">
-                    <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
-                    <!-- Image Section -->
-                    <div style="height: 24rem; background: #f3f4f6; position: relative;">
-                        <img id="modal-image" src="" alt="Product"
-                            style="width: 100%; height: 100%; object-fit: cover;" />
-                    </div>
-
-                    <!-- Content Section -->
-                    <div
-                        style="padding: 2.5rem; display: flex; flex-direction: column; max-height: 600px; overflow-y: auto;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <span id="modal-category"
-                                style="font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; background: #eff6ff; color: #1d4ed8; border-radius: 9999px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem;">Category</span>
-                            <h3 id="modal-title"
-                                style="font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">
-                                Product Name</h3>
-                            <p id="modal-description" style="color: #6b7280; line-height: 1.625;">Product description
-                                goes here.</p>
-                        </div>
-
-                        <div style="margin-bottom: 2rem;">
-                            <h4 style="font-weight: 700; color: #111827; margin-bottom: 0.75rem;">Key Features</h4>
-                            <ul id="modal-features" style="list-style: none; padding: 0; margin: 0;">
-                                <!-- Features injected here -->
-                            </ul>
-                        </div>
-
-                        <div style="margin-top: auto; display: flex; gap: 1rem;">
-                            <a id="modal-contact-btn" href="contact_and_support.html"
-                                style="flex: 1; background: #2563eb; color: white; text-align: center; padding: 0.75rem; border-radius: 0.75rem; font-weight: 700; text-decoration: none; display: block;">
-                                Request Quote
-                            </a>
-                            <button onclick="closeProductModal()"
-                                style="padding: 0.75rem 1.5rem; border: 1px solid #d1d5db; border-radius: 0.75rem; font-weight: 600; color: #374151; background: white; cursor: pointer;">
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0">
+            <!-- Image Section -->
+            <div style="height: 24rem; background: #f3f4f6; position: relative">
+              <img
+                id="modal-image"
+                src=""
+                alt="Product"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
             </div>
+
+            <!-- Content Section -->
+            <div
+              style="
+                padding: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                max-height: 600px;
+                overflow-y: auto;
+              "
+            >
+              <div style="margin-bottom: 1.5rem">
+                <span
+                  id="modal-category"
+                  style="
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    padding: 0.25rem 0.75rem;
+                    background: #eff6ff;
+                    color: #1d4ed8;
+                    border-radius: 9999px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    margin-bottom: 1rem;
+                  "
+                  >Category</span
+                >
+                <h3
+                  id="modal-title"
+                  style="
+                    font-size: 1.875rem;
+                    font-weight: 700;
+                    color: #111827;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  Product Name
+                </h3>
+                <p
+                  id="modal-description"
+                  style="color: #6b7280; line-height: 1.625"
+                >
+                  Product description goes here.
+                </p>
+              </div>
+
+              <div style="margin-bottom: 2rem">
+                <h4
+                  style="
+                    font-weight: 700;
+                    color: #111827;
+                    margin-bottom: 0.75rem;
+                  "
+                >
+                  Key Features
+                </h4>
+                <ul
+                  id="modal-features"
+                  style="list-style: none; padding: 0; margin: 0"
+                >
+                  <!-- Features injected here -->
+                </ul>
+              </div>
+
+              <div style="margin-top: auto; display: flex; gap: 1rem">
+                <a
+                  id="modal-contact-btn"
+                  href="contact_and_support.html"
+                  style="
+                    flex: 1;
+                    background: #2563eb;
+                    color: white;
+                    text-align: center;
+                    padding: 0.75rem;
+                    border-radius: 0.75rem;
+                    font-weight: 700;
+                    text-decoration: none;
+                    display: block;
+                  "
+                >
+                  Request Quote
+                </a>
+                <button
+                  onclick="closeProductModal()"
+                  style="
+                    padding: 0.75rem 1.5rem;
+                    border: 1px solid #d1d5db;
+                    border-radius: 0.75rem;
+                    font-weight: 600;
+                    color: #374151;
+                    background: white;
+                    cursor: pointer;
+                  "
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="bg-surface-100 pt-16 pb-8 border-t border-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-text-tertiary text-sm">
-                <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-text-tertiary text-sm">
+          <p>&copy; 2025 Aryan Global Commerce. All Rights Reserved.</p>
         </div>
+      </div>
     </footer>
 
     <script src="../js/main.js" defer></script>
     <script src="../js/products.js" defer></script>
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const nav = document.getElementById("main-nav");
+        if (window.scrollY > 50) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
