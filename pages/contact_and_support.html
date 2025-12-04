@@ -517,7 +517,6 @@
   </footer>
 
   <script>
-    // Handle form submission
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const btnText = document.getElementById('btn-text');
@@ -526,28 +525,27 @@
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Show loading state
       btnText.textContent = 'Sending...';
       submitBtn.disabled = true;
 
       try {
         const formData = new FormData(form);
 
-        // Use FormSubmit AJAX endpoint
         const response = await fetch('https://formsubmit.co/ajax/support@rnglobalcommerce.com', {
           method: 'POST',
-          body: formData
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
         });
 
         const data = await response.json();
 
         if (data.success === "true" || response.ok) {
-          // Show success message
           successMsg.classList.remove('hidden');
           form.reset();
           btnText.textContent = 'Message Sent!';
 
-          // Reset button after 3 seconds
           setTimeout(() => {
             btnText.textContent = 'Send Message';
             submitBtn.disabled = false;
@@ -558,29 +556,23 @@
         }
       } catch (error) {
         console.error('Form Error:', error);
-
-        // Fallback to standard submission if AJAX fails
         alert('Submitting via standard method...');
         form.submit();
       }
     });
 
-    // Mobile menu toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     }
 
-    // Navbar scroll effect
     window.addEventListener('scroll', function () {
       const nav = document.getElementById('main-nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
     });
   </script>
+
 
 </body>
 
